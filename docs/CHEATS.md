@@ -25,6 +25,8 @@
 | All aura colours at HUGE | All 18 aura steps on every garage car. |
 | Aura km/h per step = 0/1/2/3 | The top-speed bonus per aura step. The default is 2; 0 makes auras purely cosmetic. |
 | Legend auras OFF | No glow on the legends (Akio keeps his). |
-| Give Rainbow Aura card / Rainbow Aura ×99 | The top-tier aura card. |
+| Give Rainbow Aura card / Rainbow Aura ×99 | The top-tier aura card. To use it, buy all 18 AURA TUNE steps on the car and select White; the AURA TUNE header then shows RAINBOW and the car races with Akio's rainbow. |
 | Aura drops: guaranteed count / % per slot | Tune how many aura cards a win over an aura driver gives. |
 | Rainbow Aura reward off | Turns off the card normally earned by clearing every Devil Z Challenge course. |
+| Easier Akio: Wangan / Hakone | Slows Street Legends Akio on the two new courses, where his pace is set higher than on the touge courses. Wangan: about 1'29"5 instead of 1'24"2. Hakone: about 2'13" up and 2'10" down instead of 2'05" and 2'02". |
+| Easier Akio: no slipstream | Street Legends Akio normally matches your speed plus 2 km/h whenever you're faster than his own line, so he never drops back. With this on he holds 6 km/h under your speed instead. Applies to every course. |
