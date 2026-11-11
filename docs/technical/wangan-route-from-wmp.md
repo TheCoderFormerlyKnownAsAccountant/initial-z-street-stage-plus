@@ -1,4 +1,4 @@
-# M-HW — Wangan on a real WMP expressway route (multi-session status)
+# M-HW — Wangan on a real WMP expressway route (status)
 
 ## Round 1 (2026-10-31, offline, no PPSSPP): research, route choice, first complete file set
 

@@ -103,7 +103,7 @@ cd ../ap && python3 ap_boot45hap.py ../boot/BOOT45H.BIN && python3 ap_sim45h.py
   - DZC-path load buffers: bunta_crs_sel 0x1d2000 + rivaldemo 0x130000 (rivals back at stock) = 0x302000, which is +8 KB over build 44 (0x300000). Round 2 was +128 KB.
 - **DZC (Akio-mode) strip:** `PSP_course_select_AKIO.ana` gets anims 22/23 plus a texture entry pointing at the new `_00` tile. akio_remap re-points every negative offset by texture index and checks for a 'MIG.' header.
 - **SL rival-select header:** `hrv3` on 0x110cbc / 0x110ccc maps Hakone → anim 9.
-  - visit_rival_sel (on the rivals fork's file): `_04` anim 9 is HAKONE in the tex0 block; `_02` anim 9 is the Happogahara photo. Raw 0x255d80 of 0x260000.
+  - visit_rival_sel (on the rivals file): `_04` anim 9 is HAKONE in the tex0 block; `_02` anim 9 is the Happogahara photo. Raw 0x255d80 of 0x260000.
 - **Blank post-race talk:** not fixed. See the r2 report.
 
 ## Build 52 finishing (BOOT52H, on m52/cars/BOOT52C 093bb301)

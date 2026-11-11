@@ -74,7 +74,7 @@ Applies to the DEVIL Z CHALLENGE menu item: all 4 M33 lock checks (draw, descrip
   - every page slot of courses 0–7 and the Hakone lineup beaten (XB == PMASK).
 - It clobbers only at/v0 and needs a `jal` (it saves t0/t1 itself).
 - Akio is not required: his Street Legends slots still unlock after Bunta, and the Devil Z is still buyable after an Akio win.
-- **Cheat for the cheats fork:** FORCE byte, CWCheat `_L 0x0059B013 0x00000001`, unlocks the gate.
+- **Cheat for the cheat file:** FORCE byte, CWCheat `_L 0x0059B013 0x00000001`, unlocks the gate.
   - "All page rivals beaten" = 8-bit writes at S+0x1c3.. = 0x08C960BB..C2 (CWCheat 0x004960BB..C2): 0F 0F 0F 3F 0F 0F 0F 3F.
   - Hakone: S+0x1c1 = 0x08C960B9 (CWCheat 0x004960B9) = 7F.
 
@@ -89,7 +89,7 @@ Applies to the DEVIL Z CHALLENGE menu item: all 4 M33 lock checks (draw, descrip
 
 ## Known / open
 - Bust 1738 is shown as "Harada" by the M40 gojūon mapping, but it looks female. Check it in WMP story mode (M40 QA 1).
-- Hakone rival pace: drivers outside the WRIV list use the Hakone profile without per-rival wspdB scaling (HAKONE fork note).
+- Hakone rival pace: drivers outside the WRIV list use the Hakone profile without per-rival wspdB scaling .
 - Card rewards after a page race are the donor's stock rows.
 - Hakone area-clear mark uses WRIV's Wangan evaluation.
 
@@ -117,14 +117,14 @@ Applies to the DEVIL Z CHALLENGE menu item: all 4 M33 lock checks (draw, descrip
   - **B** = BOOT45PR_rd14 858762db… (= the r2 BOOT) + files_noalias/rivaldemo (0x13c500, 76e9f6bd…, buffer 0x140000) = the r2 config.
 
 ## M48 progression (build 48; chain patch `tools/m48_rivals_boot.py IN OUT --json patch48r.json`)
-- Input: BOOT46F (0d76eadf, the build-47 BOOT). Any BOOT with the M45 region intact and 0x598850..0x59893f zero works. **BOOT48R md5 70f5c3c5d392c9387d6446dc3381f3a4.** The MOVIE fork's MBGM_ID word is outside this patch (0x580690), so BOOT48M can come before or after.
+- Input: BOOT46F (0d76eadf, the build-47 BOOT). Any BOOT with the M45 region intact and 0x598850..0x59893f zero works. **BOOT48R md5 70f5c3c5d392c9387d6446dc3381f3a4.** The movie patch's MBGM_ID word is outside this patch (0x580690), so BOOT48M can come before or after.
 - **Takumi rule.** TK = clear count > 0, or Takumi (enemy 13, Akina) wins nibble of G+0x74+13 = 0x490f89. That byte is saved through the stock S+0x1d5.. status pairs, so old saves that already beat Takumi unlock at once.
   - Page 2 on every course opens with L/R only when TK. This replaces the per-course rule; it is patched in place in hp_open, keeping the same relocation kinds.
   - Wangan and Hakone lineups (course 4 + RW): until TK every slot draws the stock locked face "?" (0x110b50 → h_lk48 → 0x110be0) and CIRCLE does nothing (0xdcde8 → h_cf48).
 - **Akio rule.** Unchanged, and checked to be the same everywhere: M11/M33 rule (clear count > 0 or Bunta wins > 0) on every course, page 2, Wangan slot 8 and Hakone. On Wangan/Hakone he also needs TK.
 - **Devil Z Challenge gate.** ALLCLR_F unchanged.
 - **Verify:** `RULE48=1 P48=patch48r.json python3 tools/verify45.py BOOT46F.BIN BOOT48R.BIN patch48r_verify.json` → 101 checks ALL OK (verify48.log). That includes the progression matrix fresh / Takumi / Bunta / both / cleared: page 2, Wangan lineup lock, Akio on Wangan and on Myogi, CIRCLE.
-- **Cheats** (8-bit OR, as the cheats fork's file):
+- **Cheats** (8-bit OR, as in the cheat file):
   - Takumi on Akina beaten: `_L 0x70494F89 0x00000010`
   - "All Street Legends rivals beaten" already ORs 0x494F7C..0x494F9A, which includes Takumi (0x494F89), so it still opens everything.
 

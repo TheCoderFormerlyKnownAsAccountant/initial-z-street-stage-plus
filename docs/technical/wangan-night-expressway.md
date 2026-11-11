@@ -1,4 +1,4 @@
-# M24 fork W — Wangan as a Tokyo expressway at night (course delta on top of build 23)
+# M24 W — Wangan as a Tokyo expressway at night (course delta on top of build 23)
 
 Apply `manifest.json` after all build-23 files. It has 131 files, paths relative to `PSP_GAME/USRDIR/data`, every file at its exact stock size. No BOOT change.
 - **Base:** build 23 course = m17/f3/m9d + m20/h + m21/w.

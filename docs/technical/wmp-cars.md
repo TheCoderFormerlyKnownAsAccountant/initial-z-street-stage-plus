@@ -57,7 +57,7 @@ Goto keeps the R32: no stock enemy drives the BNR34, so there is no parts-row do
 - New cars drive exactly like their donor (no per-car power/grip yet); no car card (driver −1); Project D Web rankings (hp_data_02) not extended.
 - Per-car tables reached only through register copies (the way the tach table was missed in M26) could still read past 36 for ids 36+.
 - Rival paint for the new cars comes from the donor enemy's paint row (S15 palette index) — check the colour in QA.
-- Intro renderer note (for the INTRO fork): m45/intro/carrender.py skips every `*etc.gmo`, so the Devil Z's 099bodyetc trim (bumpers, grille) is missing in the intro.
+- Intro renderer note: m45/intro/carrender.py skips every `*etc.gmo`, so the Devil Z's 099bodyetc trim (bumpers, grille) is missing in the intro.
 
 ## Later batches (data only up to id 47)
 Add a CARS entry (build_cars.py), a NEW entry (m46_cars_boot.py) and TAG/NAME (assets46.py); rerun the three scripts and verify46c.py.

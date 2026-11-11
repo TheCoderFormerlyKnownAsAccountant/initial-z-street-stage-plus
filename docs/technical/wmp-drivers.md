@@ -1,6 +1,6 @@
 # M40 WMPCHAR: Wangan Midnight Portable drivers as Wangan's Street Legends lineup
 
-Option A (Daniel). Chained on BOOT39S (85ff0742, snow fork update) -> **BOOT40C.BIN (md5 033a2276a223e02067eb4c240723ef27)**.
+Option A (Daniel). Chained on BOOT39S (85ff0742, snow update) -> **BOOT40C.BIN (md5 033a2276a223e02067eb4c240723ef27)**.
 Not tested in PPSSPP yet: everything below was checked offline (unicorn + parsers).
 
 ## Lineup (Wangan SL area only; Happogahara and every home course stay stock)

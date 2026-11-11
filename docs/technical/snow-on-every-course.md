@@ -3,7 +3,7 @@
 Chain: BOOT38M (01e90ba9) → m39/aurastat → BOOT39A (6989717d) → `m39_snow_boot.py` → **BOOT39S.BIN (85ff0742…)**, for BOOT and EBOOT.
 - Region 0x57f240–0x57fa9f.
 - 16 patched words.
-- The script is region-independent of the aura fork: built on BOOT38M, the region bytes are identical (verified).
+- The script is region-independent of the aura work: built on BOOT38M, the region bytes are identical (verified).
 
 Rebuild: `./rebuild.sh`. It runs the archive recolour, the contact sheets, the BOOT on both bases and the verify.
 
