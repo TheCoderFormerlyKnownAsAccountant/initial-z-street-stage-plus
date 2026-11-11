@@ -1,6 +1,6 @@
 # PSP Games Reconfigured: Initial D Street Stage × Wangan Midnight Portable
 
-Updated 2026-10-28 (build 13 tested: English menus, messages, HUD, cards). The psp-remix plugin is v0.4.0 (`remix_build/psp-remix.plugin`).
+Updated 2026-10-28 (build 13 tested: English menus, messages, HUD, cards).
 
 ## Games
 - **Initial D Street Stage**: ULJM05093 v1.01, Sega.
@@ -143,7 +143,7 @@ The PSP heap has very little headroom. Each scene loads its XBB through a fixed 
 - Blocked: atracdenc build denied by the auto-mode classifier even after Daniel's chat approval.
 - v8 (2026-10-29): first ~400 m of Happogahara both directions = Wangan deck + continuous walls + new collision (path 0–160), stock-look asphalt, spectators moved. PPSSPP: walls hold, no falls, 30 FPS. Join to stock road at ~380–400 m untested (keyboard driving). Next: Daniel drives build17h; then extend (M4) section by section.
 - M4 (2026-10-29): highway over sections 0–8 (path 0–639, ~1.7 km) + return start 27–28; m17/f3/m4/manifest.json (48 files, stock sizes). Test autopilot BOOT (m17/f3/ap/BOOT_AP.BIN, test only, control block 0x08D5A910) drove it in PPSSPP: no falls, smooth join to stock road at ~1'47, 30 FPS. build17h.iso currently carries the autopilot BOOT.
-- M8 (2026-10-29): FULL Happogahara is the highway, both directions (m17/f3/m8/manifest.json, 131 files, stock sizes). Autopilot v6 finished outbound/return/outbound in one session (~8'28 at ≤69 km/h), all checkpoints register, no voids, 26–30 FPS. Left: outbound replay-start navy strip, rival AI at highway speeds, scenery polish (lamps/signs/skyline), course name/map/minimap, merge into a release build (without autopilot).
+- M8 (2026-10-29): FULL Happogahara is the highway, both directions (m17/f3/m8/manifest.json, 131 files, stock sizes). Autopilot v6 finished outbound/return/outbound in one run (~8'28 at ≤69 km/h), all checkpoints register, no voids, 26–30 FPS. Left: outbound replay-start navy strip, rival AI at highway speeds, scenery polish (lamps/signs/skyline), course name/map/minimap, merge into a release build (without autopilot).
 
 ## Build 18 + release kit v2 (2026-10-29; work/m17/f3/m9)
 - Build 18 = build 17 + Wangan night highway course (replaces Happogahara, all 32 sections, both directions; lamps, gantries, city layer, ground skirt) + WANGAN rename everywhere. remix_build\build18\ (md5 8ed85619…).
@@ -247,7 +247,6 @@ The PSP heap has very little headroom. Each scene loads its XBB through a fixed 
 - BOOT32H: heap start moved to 0x08DB4000, RemixRegion ceiling 0x5B0000 (safe code region 0x5763b0+). Smoke-tested OK.
 - BOOT33U (m33/unlock): Devil Z buyable after any Street Legends Akio win (per-course, old counter, or owning one); Devil Z Challenge menu locked until Bunta beaten (new locked banner in sel_gamemode).
 - BOOT34W (m34/wriv): Wangan own SL lineup Nakazato, Kyoko, EVO5, EVO6, Sudo, Keisuke, Ryosuke, Akio; own progress S+0x1ba–0x1c0. Untested in PPSSPP.
-- psp-remix plugin v0.5.0 committed (remix_build\psp-remix.plugin) with all lessons.
 - M35 real highway (2026-10-31, m35/hw): Daniel rejected the Happogahara-line reskin. New Wangan route = WMP Shuto carriageway, 6050 m (2.2 km sweeper, JCT with ramps/overpasses, 3 km straight; min radius ~204 m). New path/AI lines, collision, 32 sections from WMP chunks in true positions, gates by path index; manifest_hw.json (131 files, stock sizes). Autopilot BOOT35AP follows new line. Untested in PPSSPP (disk full). Risks: section culling by stock positions, checkpoint triggers, camera paths/minimap, fog.
 
 ## Build 35 — current (2026-11-01; remix_build\build35, ISO md5 81d1749d…, kit v12)
@@ -300,7 +299,7 @@ The PSP heap has very little headroom. Each scene loads its XBB through a fixed 
 
 ## Build 45 — integrated, NOT released (2026-11-06; remix_build\build45, ISO md5 14336b80…)
 - = build 44 + polish (result.bin, BOOT45P) + rivals (Wangan Rivals page 2, 36 portraits, gate) + Hakone (10th course, 70 files) + new opening (c9356143); BOOT45PRH e1908dba (chain reproduced). verify45: 117/117 OK.
-- BLOCKER: SL course select cursor 9 (Hakone) hangs — stock 0xd3ddc copies only 9 counts (0x21179c) into a 0x40 frame, count[9] reads the caller's stack → endless SlotToEnemy loop. Hakone fork must clamp/extend. Kit v22 held.
+- BLOCKER: SL course select cursor 9 (Hakone) hangs — stock 0xd3ddc copies only 9 counts (0x21179c) into a 0x40 frame, count[9] reads the caller's stack → endless SlotToEnemy loop. Hakone patch must clamp/extend. Kit v22 held.
 - QA pass: opening, DZC gate locked, Akina/Wangan page-2 (L works, R did not), SL retire 5 cards, TA Hakone loads. Blank Wangan talk log at 0x08D98100 captured (talkTbl_HIRAMOTO11/07). Cheat tests blocked (no PSP\Cheats access). Report: work/m45/QA_B45.md.
 - Build 45 r2 (BOOT45PRH 38e85e93; ISO md5 3b0c1f92…): SL Hakone hang, TA labels/strip, R page switch FIXED; TA Hakone out/ret + replay, 10-card win, FORCE/×99 cheats, Happogahara PASS. NEW BLOCKER: Devil Z Challenge crashes on Myogi and Hakone — rivaldemo XBB not loaded on the Bunta/DZC path (bunta_crs_sel +64 KB and rivaldemo +64 KB in the same transition). Kit v22 held. Blank Wangan/Hakone post-race talk: dumps in work/m45/qa/talkobj_*.txt (WMP talk tables use W_0/N and no D_ delay).
 
@@ -357,15 +356,15 @@ The PSP heap has very little headroom. Each scene loads its XBB through a fixed 
 - BOOT52 a85c3ca41cbd95bf802b0731935047e1 = BOOT52D 558139fe + diffs of BOOT52A b9679347 + BOOT52H c470ba91 vs BOOT52C 093bb301 (m52/merge/merge52.py: 0 byte overlaps, no header/existing-reloc change, .rel.data +32/+19/+6). verify52h ALL OK, verify52a ALL OK, verify52d 66/66, verify52c 91/91; all reloc orders relocate identically.
 - ISO md5 2463d67d7b5120d61a9b1ba23123f321, VERIFY52 254/254 (build 51 ISO kept). Kit v29 md5 11d07cc482d53be4e68164fdfabbf538, 599,657,280 B, TEST-APPLY OK.
 - QA PASS: intro Kuroki R33/Shima 964 cards; Shima race car black 964; Toyota grid 9 cars, Supra paints; Hakone SNOW loads snow Hakone; autopilot (QA ISO build52ap, BOOT45HAP) through the outbound U-bend at 62–70 km/h, no wall hits; DZC (Hakone, Wangan) + Wangan race OK.
-- QA FAIL (cars fork): rival-select rows Kuroki "V-spec II (BNR32)", Shima "RX-7 ∞ III (FC3S)"; grey panel above the 964 roof in the race intro; small quad at the Supra roof in New Car. Supra/Mark II grid thumbnails speckled. TRD logo not seen.
+- QA FAIL (cars): rival-select rows Kuroki "V-spec II (BNR32)", Shima "RX-7 ∞ III (FC3S)"; grey panel above the 964 roof in the race intro; small quad at the Supra roof in New Car. Supra/Mark II grid thumbnails speckled. TRD logo not seen.
 - Not run: Versus course list (needs 2nd player; PPSSPP joined a relay → backed out), 10-card win screen (needs a win).
 - Aura FPS (PPSSPP FPS counter, same spots; b51 → b52): Akio Myogi VS shot 27–28 → 23–25; countdown 26–29 → 25–30; GO 26–30 → 20–22; Akio ~55 m ahead 22–23 → 19–30; 125 m 17–19 → 21; 250 m+ 27 → 24–28. Bunta Akina (VS/3/GO/+2s/+4s): 30/24/27/30/30 → 30/20/30/30/29. No clear gain at this PC's 30 FPS cap; glow looks the same. Mirror: Akio's Devil Z seen in the mirror on Wangan, no glow visible there (b51 not compared).
 
 ## Build 53 + kit v30 (2026-11-08; remix_build\build53) — ship candidate
 - BOOT53 4b48068f20d7690626c8abc076470d87 = BOOT52 + diffs of BOOT53C 9b75e040 (cars), BOOT53M f99f1247 (map), BOOT53K 7fdfebe5 (m53/akio; Akio scales with aura P) via m53/merge/merge53.py (0 overlaps, +82 relocs). verify53m/53k ALL OK, verify53c 73/73.
-- ISO md5 abbe282ea1f2e59df9107b0ea3598f43, VERIFY53 254/254. Kit v30 md5 b3bc1f994541320a090bfcff0e1ee42f, 602,867,220 B, TEST-APPLY OK. game2d: map fork's 40790f0e (cars' game2d was the unchanged b52 copy).
+- ISO md5 abbe282ea1f2e59df9107b0ea3598f43, VERIFY53 254/254. Kit v30 md5 b3bc1f994541320a090bfcff0e1ee42f, 602,867,220 B, TEST-APPLY OK. game2d: map 40790f0e (cars' game2d was the unchanged b52 copy).
 - QA PASS: R33/964 rival rows, 964 VS no panel, Supra no roof square, Toyota thumbs clean, Happo minimap, SL talk, opening.
-- QA FAIL: Wangan/Hakone in-race minimap shows dots only (no road line); aura glow not in the mirror (fork's residual risk: mirror pass doesn't draw effects).
+- QA FAIL: Wangan/Hakone in-race minimap shows dots only (no road line); aura glow not in the mirror (mirror pass doesn't draw effects).
 - Akio scaling inconclusive (no build-53 autopilot BOOT; manual drive at P=18 lost by 900+ m — Akio ~285 km/h). Daniel reports (in the app) Akio still beats him by ~250 m at max aura (likely b52).
 
 ## Build 54 + kit v31 (2026-11-08; remix_build\build54)
@@ -375,7 +374,7 @@ The PSP heap has very little headroom. Each scene loads its XBB through a fixed 
 - Kit v31 md5 6ab8f000bec3c386f85ac01bdb401036, 602,867,993 B, TEST-APPLY OK.
 
 ## Build 55 + kit v32 (2026-11-08; remix_build\build55) — INITIAL Z page with 6 buyable cars
-- BOOT55C 4a7f7614 (cars fork) on BOOT55A 09bf83a1 (= BOOT54B with the PL5 mirror hook unwired at 0x5569b0); verify55c 135/135. rl55 = BOOT/EBOOT + cars manifest55c minus its stale game2d d7efcd2f (kept the map fork's b61bdab5).
+- BOOT55C 4a7f7614 (cars) on BOOT55A 09bf83a1 (= BOOT54B with the PL5 mirror hook unwired at 0x5569b0); verify55c 135/135. rl55 = BOOT/EBOOT + cars manifest55c minus its stale game2d d7efcd2f (kept the map b61bdab5).
 - ISO md5 36d0b72dd38d4bda617cdac226363bcb, 2,014,259,200 B, VERIFY55 254/254 (sel_car / sel_maker relocated).
 - QA PASS: New Car > INITIAL Z lists Sileighty, BCNR33, Z32, Z31, 964, Celsior; bought R33 + 964 (CAR DATA OK); TA Wangan with both (HUD, no memory errors, Ignore illegal off); Toyota page OK; Devil Z SL Myogi race runs. Sound not checked.
 - Notes: new-car thumbnails plain grey (speckled top strip), no driver portraits, NISMO parts maker shown for the 964.

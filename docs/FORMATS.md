@@ -1,6 +1,6 @@
 # PSP formats, as learned on Initial Z
 
-This is a summary. The working references live in the plugin at [`plugin/skills/psp-formats/`](../plugin/skills/psp-formats/) and [`plugin/skills/psp-game-notes/`](../plugin/skills/psp-game-notes/). The readers and writers are in [`plugin/scripts/`](../plugin/scripts/).
+This is a summary. The readers and writers are in [`lib/`](../lib/).
 
 ## Disc
 - **UMD ISO (ISO 9660)**: `iso_tool.py` reads files, and with `patch --replace/--add` writes replacements and new files. It keeps LBAs where a file still fits, relocates it otherwise, enlarges directories, and re-verifies directory records afterwards.
