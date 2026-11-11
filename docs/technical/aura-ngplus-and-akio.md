@@ -35,3 +35,10 @@ RB_ADD f32[2] 0x205AA228, CAP f32[2] 0x205AA230.
 2. Card screen gives aura cards only vs aura opponents (OPPK/OPPT).
 3. Rainbow: give card 192 (`_L 0x104960A6 0x00000801`), 18 steps, White → rainbow pulse; header shows RAINBOW.
 4. Akio Challenge: Akina downhill dry ≈ 2'38", independent of aura; Wangan top ≈ 286.
+
+## v1.0.1: Street Legends Akio drives his own line (M61)
+`tools/boot/m61_akio_boot.py` (BOOT59 → v1.0.1). Street Legends only; the Devil Z Challenge is unchanged.
+- SL RB_ADD (0x5a622c) 2.0 → −1000.0. The M10 rubber band is target = max(line × GAIN, min(player × RB_MUL + RB_ADD, line × CORNER_CAP on corners)), capped at TOP. With −1000 the second term never wins, so Akio drives line × GAIN: his calibrated record pace. He no longer holds 2 km/h over the player.
+- SL GAIN: Wangan 1.15 → 1.08 (about 1'29"5), Hakone 1.18 → 1.10 (about 2'13" up / 2'10" down). Wangan's old pace (1'24"2) was faster than a max-aura player's best (1'28").
+- On Wangan and Hakone the rival target was × 1.08 whenever the rival was behind (M37B hW). The `mul.s f3,f3,f0` at 0x57ccf0 now calls BEH61 (0x5a7810), which skips the multiply for Street Legends Akio (G0 ≠ 2, AKFLAG = 0, enemy 31). Unicorn: SL Akio 200 → 200; other rivals and Challenge Akio 200 → 216. Registers restored.
+- +7 relocations (6 HI/LO in BEH61, 1 R_26 at 0x57ccf0). Kit BOOT md5 befc20c9e63b998793a0434b882e5c5c.
