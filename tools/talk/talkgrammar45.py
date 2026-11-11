@@ -11,7 +11,7 @@ token only after a speaker on an open window; every page ends 'W_n','N' and hold
 pose < 10 (the WMP portraits carry 10 poses). Prints a stock comparison for several post-race tables.
 """
 import gzip, re, sys
-sys.path[:0] = ['plugin/scripts', 'work/m45/rivals/tools']
+sys.path[:0] = ['lib', 'work/m45/rivals/tools']
 import xbb, ident45 as I
 R = gzip.decompress(open('work/m45/rivals/files/rivaldemo/rivaldemo.bin.gz', 'rb').read())
 X = {e['name']: R[e['offset']:e['offset'] + e['size']] for e in xbb.parse(R)}
