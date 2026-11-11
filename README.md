@@ -152,9 +152,9 @@ The work followed a fixed pipeline: decompile, reverse-engineer the formats, pat
 
 This repository contains **only original code, documentation and screenshots**. It does not contain any game data.
 
-To play, you need your own legally obtained copy of *Initial D Street Stage* (ULJM05093). Grab the **clean install kit** from the [Releases](../../releases) page. It contains no game data: it rebuilds Initial Z on your computer from your own copies of *Initial D Street Stage* (ULJM05093) and *Wangan Midnight Portable* (ULJM05264). See the [v1.0 release notes](docs/release/RELEASE_NOTES_v1.0.md). See [docs/CHEATS.md](docs/CHEATS.md) for the cheat file.
+To play, you need your own legally obtained copy of *Initial D Street Stage* (ULJM05093). Grab the **clean install kit** from the [Releases](../../releases) page. It contains no game data: it rebuilds Initial Z on your computer from your own copies of *Initial D Street Stage* (ULJM05093) and *Wangan Midnight Portable* (ULJM05264). See the [v1.0.1 release notes](docs/release/RELEASE_NOTES_v1.0.1.md). See [docs/CHEATS.md](docs/CHEATS.md) for the cheat file.
 
-**Akio too hard?** Street Legends Akio is tuned to world-record pace, and on Wangan and Hakone he is faster still. If he's out of reach, turn on the **Easier Akio** codes in the [cheat file](docs/CHEATS.md): one each for Wangan and Hakone, plus **no slipstream**, which stops him matching your speed. These codes don't touch your save, so you can turn them off at any time. A retune of Akio is planned for v1.1.
+**Akio too hard?** Since v1.0.1, Street Legends Akio drives his own record line and no longer matches your speed, so a faster run beats him. He is also slower on Wangan and Hakone. If he's still out of reach, turn on the **Easier Akio** codes in the [cheat file](docs/CHEATS.md). These codes don't touch your save, so you can turn them off at any time.
 
 PPSSPP tips: turn off the on-screen chat button (it covers speaker names). On slower devices, keep the default rendering settings.
 
