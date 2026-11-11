@@ -178,6 +178,7 @@ The tools expect a workspace with `game/` (files extracted from your own disc) a
 
 ## Credits
 
+- Built by Daniel with the help of Claude (Anthropic).
 - *Initial D Street Stage* © SEGA 2006. *Initial D* © Shuichi Shigeno / Kodansha.
 - *Wangan Midnight Portable* © Genki / Namco Bandai. *Wangan Midnight* © Michiharu Kusunoki / Kodansha.
 - Hakone road data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, ODbL 1.0.
