@@ -1,11 +1,11 @@
 # Tools
 
-These are the project-specific tools, published as a record of how Initial Z was built. The general format tools (ISO, XBB, GIM, GMO, @ANA, UCL, MIPS helpers) are in [`../plugin/scripts/`](../plugin/scripts/).
+These are the project-specific tools, published as a record of how Initial Z was built. The general format tools (ISO, XBB, GIM, GMO, @ANA, UCL, MIPS helpers) are in [`../lib/`](../lib/).
 
 Paths are relative to a workspace:
 - `game/`: files extracted from **your own** disc images.
 - `work/`: intermediate output.
-- `plugin/scripts`: the plugin's core tools.
+- `lib`: the general format tools.
 
 Several scripts belong to one specific build step and import helpers from that step's folder, so treat them as readable references rather than a one-command build. No game data is included; anything a script needs comes from your own extracted copy.
 
