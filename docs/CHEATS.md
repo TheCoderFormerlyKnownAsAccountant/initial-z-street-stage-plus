@@ -23,10 +23,20 @@
 | Unlock Devil Z Challenge | Records an Akio win on Akina, which is saved. |
 | Devil Z Challenge FORCE | Opens the mode while the code is on, without touching the save. |
 | All aura colours at HUGE | All 18 aura steps on every garage car. |
-| Aura km/h per step = 0/1/2/3 | The top-speed bonus per aura step. The default is 2; 0 makes auras purely cosmetic. |
+| Aura km/h per step = 0/1/2/3/5 | The top-speed bonus per aura step. The default is 2; 0 makes auras purely cosmetic. |
 | Legend auras OFF | No glow on the legends (Akio keeps his). |
 | Give Rainbow Aura card / Rainbow Aura ×99 | The top-tier aura card. To use it, buy all 18 AURA TUNE steps on the car and select White; the AURA TUNE header then shows RAINBOW and the car races with Akio's rainbow. |
 | Aura drops: guaranteed count / % per slot | Tune how many aura cards a win over an aura driver gives. |
 | Rainbow Aura reward off | Turns off the card normally earned by clearing every Devil Z Challenge course. |
-| Easier Akio: Wangan / Hakone | Slows Street Legends Akio on the two new courses, where his pace is set higher than on the touge courses. Wangan: about 1'29"5 instead of 1'24"2. Hakone: about 2'13" up and 2'10" down instead of 2'05" and 2'02". |
-| Easier Akio: no slipstream | Street Legends Akio normally matches your speed plus 2 km/h whenever you're faster than his own line, so he never drops back. With this on he holds 6 km/h under your speed instead. Applies to every course. |
+| Easier Akio: Wangan / Hakone | Slows Street Legends Akio further on the two new courses. Wangan: about 1'32"7 instead of 1'29"5. Hakone: about 2'20" up and 2'17" down instead of 2'13" and 2'10". |
+| Harder Akio | Brings back the v1.0 Street Legends Akio: he matches your speed plus 2 km/h, with the faster v1.0 pace on Wangan and Hakone. |
+
+## Caution: aura km/h per step = 5
+
+This code lets a fully tuned car (18 aura steps) gain up to **+90 km/h** of top speed, instead of +36 km/h at the default setting. The courses, collision, AI and cameras were only tested up to about +36 km/h. At these speeds you can expect:
+
+- cars launching over crests, clipping through walls or falling out of the course,
+- corners you can't physically make, and rivals that can't keep up at all,
+- Time Attack records that are far beyond normal play. **Those records are saved.**
+
+Back up your save first, and turn the code off before racing for real records.
