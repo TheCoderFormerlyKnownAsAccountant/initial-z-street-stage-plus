@@ -41,7 +41,7 @@ V = [
 ]
 DZ = ('nissan_s30', (30, 52, 130))
 import hrender as HR
-# Hakone segment (hrender world: Hakone fork world.json if present, else Usui night stand-in)
+# Hakone segment (hrender world: Hakone world.json if present, else Usui night stand-in)
 HV2 = [
  ('bunta', 'Bunta Fujiwara', 'subaru_gc8s5', (18, 40, 104), None, 'IMPREZA WRX STi Ver.V GC8', 'side', 6, None, 600.0),
  ('takumi2', 'Takumi Fujiwara', 'toyota_ae86t', (240, 240, 242), (18, 18, 20), 'SPRINTER TRUENO AE86  \u2014  CARBON HOOD', 'front_hi', 7, 'd036eb', 1750.0),
@@ -50,7 +50,7 @@ BUNTA_CAR = (HV2[0][2], HV2[0][3], None, None); TAKUMI_CAR = (HV2[1][2], HV2[1][
 RED = (255, 52, 40); BLUE = (40, 120, 255)            # aura tints (RGB)
 HSPEED = 42.0                                         # m/s on the mountain (151 km/h)
 CH_S0 = 2150.0; CH_V = 45.0; HK_S0 = 1480.0; HL_ = 1.6
-if HR.SPEC['name'].startswith('hakone'):              # real Hakone course (Hakone fork): wider two-lane road
+if HR.SPEC['name'].startswith('hakone'):              # real Hakone course : wider two-lane road
     HV2[0] = HV2[0][:9] + (1200.0,); HV2[1] = HV2[1][:9] + (600.0,); CH_S0 = 1700.0; HK_S0 = 2905.0; HL_ = 1.9
 VSPEED = 50.0                                        # m/s (180 km/h)
 
@@ -416,7 +416,7 @@ def frame3d(n, ss=2, t=None, sh=None):
         tgt = tgt + R0[0] * dist * k * smooth((u - ti + 0.25) / 1.1)   # M50: ease-in-out (was ease-out: pan started at full speed)
     R = cam_R(eye, tgt, st['roll']); f = 380.0 * 480 / 640 * st['fov']
     plates = [] if HR.SPEC['name'].startswith('hakone') else sorted(p for p in glob.glob(HAKONE_RENDERS + '/hk_*_1080.png'))
-    if sh['kind'] == 'hakone' and plates:      # real Hakone night render from the HAKONE fork: slow push-in on the plate
+    if sh['kind'] == 'hakone' and plates:      # real Hakone night render : slow push-in on the plate
         pl = cv2.imread(plates[0]); D = sh['t1'] - sh['t0']; z = 1.0 + 0.10 * smooth(u / D)
         pl = cv2.resize(pl, (480, 272), interpolation=cv2.INTER_AREA)
         M2 = cv2.getRotationMatrix2D((240, 150), 0, z); img = cv2.warpAffine(pl, M2, (480, 272), borderMode=cv2.BORDER_REFLECT).astype(np.float32)
