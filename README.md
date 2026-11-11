@@ -146,7 +146,7 @@ The full engineering log is in [docs/DEV_LOG.md](docs/DEV_LOG.md) and [docs/tech
 
 Initial Z was made by **Daniel** ([@TheCoderFormerlyKnownAsAccountant](https://github.com/TheCoderFormerlyKnownAsAccountant)). He decided what the game should be, played every build and kept pushing on what felt wrong, from "Akio is too easy" to "the intro stutters" to "Shima's car doesn't match his intro card".
 
-The work was organised around the [psp-remix toolkit](plugin/): a set of workflows and scripts for decompiling, reverse-engineering formats, patching code, mixing assets, translating, recompiling and QA testing. Features were built in parallel, each in its own reserved region of the executable, then merged byte-by-byte and verified. Every build was tested in **PPSSPP**, with the save backed up and restored around every test.
+The work followed a fixed pipeline: decompile, reverse-engineer the formats, patch the code, mix in the Wangan assets, translate, recompile and test. Features were built in parallel, each in its own reserved region of the executable, then merged byte-by-byte and verified. Every build was tested in **PPSSPP**, with the save backed up and restored around every test.
 
 ## Playing it
 
@@ -168,7 +168,7 @@ docs/
   technical/            deep dives: Wangan route, Hakone, WMP drivers and cars,
                         snow, minimaps, auras, cards, movie audio, the talk bug
   img/                  screenshots
-plugin/                 the psp-remix toolkit (workflows, references, core scripts)
+lib/                    general PSP format tools (ISO, XBB, GIM, GMO, @ANA, UCL, MIPS)
 tools/                  project-specific tools: course builders and simulators,
                         movie pipeline, ATRAC3 encoder, talk grammar, BOOT patch
                         scripts and their verifiers
@@ -178,7 +178,6 @@ The tools expect a workspace with `game/` (files extracted from your own disc) a
 
 ## Credits
 
-- Built by Daniel with the help of Claude (Anthropic).
 - *Initial D Street Stage* © SEGA 2006. *Initial D* © Shuichi Shigeno / Kodansha.
 - *Wangan Midnight Portable* © Genki / Namco Bandai. *Wangan Midnight* © Michiharu Kusunoki / Kodansha.
 - Hakone road data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, ODbL 1.0.
