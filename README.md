@@ -10,6 +10,25 @@
   an arcade-style aura system, a rewritten card system, a complete English translation and a brand-new opening movie.
 </p>
 
+## Quick start
+
+**You need:** your own ISOs of *Initial D Street Stage* (Japan, ULJM05093) and *Wangan Midnight Portable* (Japan, ULJM05264), about 4 GB of free disk space, and [PPSSPP](https://www.ppsspp.org/) (or a PSP that runs ISOs).
+
+1. **Download** `InitialZ_v1.0.1_patch.zip` from the [latest release](../../releases/latest).
+2. **Unzip** it anywhere. You get a folder called `InitialZ_v1.0.1`.
+3. **Add your games:** copy both ISOs into `InitialZ_v1.0.1/put your games here`. The file names don't matter; the patcher finds them by checksum.
+   - Initial D Street Stage: MD5 `225f1f56c37097c7a11ecaddd52abbf1`
+   - Wangan Midnight Portable: MD5 `85c3abab28df6509911461de9d58b9e9`
+4. **Optional: pick the intro song.** Copy one song (`.mp3`, `.m4a`, `.wav`, `.wma`, `.aac` or `.flac`) into `InitialZ_v1.0.1/music`. It becomes the opening movie's song (the first 108 seconds are used). Leave the folder empty to keep the default Wangan Midnight track.
+5. **Patch:**
+   - **Windows:** double-click `Patch Initial Z.bat` and wait until it says **Done** (a few minutes).
+   - **Linux / macOS:** install xdelta3 (`sudo apt install xdelta3` or `brew install xdelta`), then run `sh patch.sh` in the folder. A custom intro song also needs `python3`, `ffmpeg` and [atracdenc](https://github.com/dcherednik/atracdenc).
+6. **Play:** open PPSSPP and load `InitialZ_StreetStagePlus_v1.0.1.iso` from the `InitialZ_v1.0.1` folder.
+7. **Optional: cheats.** Copy [`docs/cheats/ULJM05093.ini`](docs/cheats/ULJM05093.ini) to `PSP/Cheats/` in your PPSSPP memory stick folder, then enable codes in **Game settings → Cheats**. See [docs/CHEATS.md](docs/CHEATS.md).
+
+**If something goes wrong:** "Could not find …" means that ISO is a different dump (compare its MD5 with the values above). "Checksum does not match" means the download is damaged; download the zip again. Saves from earlier versions carry over.
+
+
 <p align="center">
   58 builds · 35 release kits · ~370 KB of new MIPS code and data in the executable · 770+ Python tools · 230+ QA screenshots · 25 days
 </p>
@@ -152,7 +171,7 @@ The work followed a fixed pipeline: decompile, reverse-engineer the formats, pat
 
 This repository contains **only original code, documentation and screenshots**. It does not contain any game data.
 
-To play, you need your own legally obtained copy of *Initial D Street Stage* (ULJM05093). Grab the **clean install kit** from the [Releases](../../releases) page. It contains no game data: it rebuilds Initial Z on your computer from your own copies of *Initial D Street Stage* (ULJM05093) and *Wangan Midnight Portable* (ULJM05264). See the [v1.0.1 release notes](docs/release/RELEASE_NOTES_v1.0.1.md). See [docs/CHEATS.md](docs/CHEATS.md) for the cheat file.
+To play, follow the [Quick start](#quick-start) above. The release zip contains only a patch and the tools to apply it; the game is built on your computer from your own discs. See the [v1.0.1 release notes](docs/release/RELEASE_NOTES_v1.0.1.md).
 
 **Akio too hard?** Since v1.0.1, Street Legends Akio drives his own record line and no longer matches your speed, so a faster run beats him. He is also slower on Wangan and Hakone. If he's still out of reach, turn on the **Easier Akio** codes in the [cheat file](docs/CHEATS.md). These codes don't touch your save, so you can turn them off at any time.
 
