@@ -67,8 +67,7 @@ Everything that came from the games' own pictures is rebuilt from your discs or 
 Gameplay, courses, cars, AI, cards, dialogue and menus work the same as the private build. The opening movie is the original Initial D one in v1.0; the Initial Z intro comes in v1.1.
 
 ## Credits
-- **Direction, design and playtesting:** Daniel.
-- **Reverse engineering, code, conversion tools, courses, dialogue and kit:** Claude (Anthropic).
+- Built by Daniel.
 - *Initial D Street Stage* © SEGA. *Initial D* © Shuichi Shigeno / Kodansha.
 - *Wangan Midnight Portable* © Genki / Namco Bandai. *Wangan Midnight* © Michiharu Kusunoki / Kodansha.
 
